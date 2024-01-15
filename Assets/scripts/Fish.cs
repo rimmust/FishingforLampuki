@@ -8,12 +8,12 @@ public class Fish : MonoBehaviour
     private static List<Fish> allFish = new List<Fish>();
 
     private Vector2 randomPosition;
-    public Vector4 boundaries;
+    [SerializeField] private Vector4 boundaries;
 
      public  int numberOfClicks;
 
      public float speed = 10f;
-     
+     private Animator _animator;
     
     
     //we need to calculate the number of clicks 
@@ -85,6 +85,9 @@ public class Fish : MonoBehaviour
 
     private void Start()
     {
+
+        _animator = GetComponent<Animator>();
+        
         //kif se tibda il game se jigu added to the list 
         allFish.Add(this);
         randomPosition = transform.position;
@@ -107,14 +110,14 @@ public class Fish : MonoBehaviour
     //din se jitilqu l-extra fish  kif tiklikja 1 
     private void Hide()
     {
-        gameObject.SetActive(false);
+        _animator.SetBool("Hidden", true);
     }
     
     //show the other fish 
     //we need to create more fish from unity 
     private void Show()
     {
-        gameObject.SetActive(true);
+        _animator.SetBool("Hidden", false);
     }
 
     private void ResetProps()
