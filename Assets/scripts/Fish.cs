@@ -14,8 +14,9 @@ public class Fish : MonoBehaviour
 
      public float speed = 10f;
      private Animator _animator;
+     
     
-    
+     
     //we need to calculate the number of clicks 
     private void OnMouseDown()
     {
@@ -59,7 +60,11 @@ public class Fish : MonoBehaviour
         if (numberOfClicks >= 3)
         {
             Debug.Log("The shape is clicked 3 times");
+            
             GameManager.instance.AddScore();
+            
+            //particle explosion
+           
             ResetProps();
             
             //din se tahdem bil kontra 
@@ -71,6 +76,8 @@ public class Fish : MonoBehaviour
                 {
                     
                     continue;
+                    //particle explosion
+                   
                 }
             
                 fish.ResetProps();
