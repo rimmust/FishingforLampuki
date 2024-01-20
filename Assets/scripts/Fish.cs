@@ -15,8 +15,6 @@ public class Fish : MonoBehaviour
      public float speed = 10f;
      private Animator _animator;
      
-    
-     
     //we need to calculate the number of clicks 
     private void OnMouseDown()
     {
@@ -38,6 +36,7 @@ public class Fish : MonoBehaviour
         SetRandomPosition();
 
         On3Click();
+        
         //Destroy(gameObject);
         Debug.Log("When mouse down on  click the fish is removed");
     }
@@ -54,17 +53,12 @@ public class Fish : MonoBehaviour
     private void On3Click()
     {
         numberOfClicks++;
-        
-        
         //in this method when the user clicks 3 times the game will get destoryed
         if (numberOfClicks >= 3)
         {
-            Debug.Log("The shape is clicked 3 times");
-            
+          //  Debug.Log("The shape is clicked 3 times");
+       
             GameManager.instance.AddScore();
-            
-            //particle explosion
-           
             ResetProps();
             
             //din se tahdem bil kontra 
@@ -98,6 +92,7 @@ public class Fish : MonoBehaviour
         //kif se tibda il game se jigu added to the list 
         allFish.Add(this);
         randomPosition = transform.position;
+        
        
 
     }
@@ -134,4 +129,6 @@ public class Fish : MonoBehaviour
         transform.position = randomPosition;
        
     }
+
+   
 }
