@@ -102,8 +102,7 @@ MonoBehaviour:
   boundaries: {x: -7, y: 7, z: -3, w: 0}
   numberOfClicks: 0
   speed: 10
-  Explosionparticleffect: {fileID: 7009964956275143774, guid: 14d09f035d0b38747bfdba1a065925a6, type: 3}
-  expDuration: 0.5
+  Effect: {fileID: 1869745479798820013, guid: b48dc3daada225740976ac30f65b234c, type: 3}
 --- !u!95 &1636179882126822461
 Animator:
   serializedVersion: 5

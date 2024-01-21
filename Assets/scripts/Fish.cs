@@ -15,7 +15,12 @@ public class Fish : MonoBehaviour
      public float speed = 10f;
      private Animator _animator;
      
+     //particle effect
+     [SerializeField]  GameObject Effect;
     //we need to calculate the number of clicks 
+    
+    //duration
+    [SerializeField] private float bDuration = 0.5f;
     private void OnMouseDown()
     {
         
@@ -56,8 +61,9 @@ public class Fish : MonoBehaviour
         //in this method when the user clicks 3 times the game will get destoryed
         if (numberOfClicks >= 3)
         {
+            GameObject pexplosion = Instantiate(Effect, transform.position, Quaternion.identity);
+           Destroy(pexplosion,bDuration);
           //  Debug.Log("The shape is clicked 3 times");
-       
             GameManager.instance.AddScore();
             ResetProps();
             
@@ -93,7 +99,8 @@ public class Fish : MonoBehaviour
         allFish.Add(this);
         randomPosition = transform.position;
         
-       
+
+
 
     }
 
